@@ -14,13 +14,14 @@ class Spellbook {
    * @param {Spell} spell - The spell to add.
    * @throws {Error} Throws an error if a spell with the same name already exists.
    */
-  addspell(spell: Spell): void {
-    var exists = this.#spells.some((s) => s.Name.toLowerCase() == spell.Name.toLowerCase());
+  addSpell(spell: Spell): void {
+    const exists = this.#spells.some(
+      (currentSpell) => currentSpell.name.toLowerCase() === spell.name.toLowerCase(),
+    );
     if (exists) {
-      throw new Error(`${spell.Name} ya está en el libro de hechizos`);
+      throw new Error(`${spell.name} ya está en el libro de hechizos`);
     }
     this.#spells.push(spell);
-    console.log("Spell ${spell.Name} added");
   }
 
   /**
@@ -39,7 +40,7 @@ class Spellbook {
    * @return {Spell[]} The matching spells.
    */
   findByOrigin(origin: FirstAppearance): Spell[] {
-    return this.#spells.filter((s) => s.firstAppearance === origin);
+    return this.#spells.filter((spell) => spell.firstAppearance === origin);
   }
 
   /**
@@ -48,9 +49,13 @@ class Spellbook {
    * @return {Record<FirstAppearance, number>} The amount of spells per medium.
    */
   countByOrigin(): Record<FirstAppearance, number> {
-    const counts: Record<FirstAppearance, number> = { book: 0, movie: 0, videogame: 0 };
-    for (const sp of this.#spells) {
-      counts[sp.firstAppearance]++;
+    const counts: Record<FirstAppearance, number> = {
+      book: 0,
+      movie: 0,
+      videogame: 0,
+    };
+    for (const spell of this.#spells) {
+      counts[spell.firstAppearance]++;
     }
     return counts;
   }

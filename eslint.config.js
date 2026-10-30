@@ -13,6 +13,12 @@ export default defineConfig([
   tseslint.configs.recommended,
   {
     rules: {
+      //Agrego reglas para el lint
+      "no-template-curly-in-string": "warn",
+      "no-useless-assignment": "warn",
+      "id-length": ["warn", { min: 3 }],
+      "no-magic-numbers": ["warn", { ignore: [0, 1] }],
+
       // Complexity guardrails
       complexity: ["warn", { max: 10 }],
       "max-depth": ["warn", 3],
