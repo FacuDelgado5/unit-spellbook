@@ -16,7 +16,8 @@ class Spellbook {
    */
   addSpell(spell: Spell): void {
     const exists = this.#spells.some(
-      (currentSpell) => currentSpell.name.toLowerCase() === spell.name.toLowerCase(),
+      (currentSpell) =>
+        currentSpell.name.toLowerCase() === spell.name.toLowerCase(),
     );
     if (exists) {
       throw new Error(`${spell.name} ya está en el libro de hechizos`);

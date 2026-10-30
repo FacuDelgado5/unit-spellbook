@@ -53,7 +53,7 @@ class Spell {
     if (!FIRST_APPEARANCES.includes(firstAppearance)) {
       throw new Error("Debe indicar la primera aparición del hechizo");
     }
-    this.name = name;
+    this.name = trimmedName;
     this.description = description;
     this.firstAppearance = firstAppearance;
   }

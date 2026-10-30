@@ -43,11 +43,12 @@ if (btnAdd && inpName && inpDescription) {
       clearInputs(inpName, inpDescription);
       errorContainer?.classList.add("d-none");
       renderSpells();
-      showSuccessMessage(`${newSpell.Name} agregado correctamente!`);
+      showSuccessMessage(`${newSpell.name} agregado correctamente!`);
     } catch (error) {
       errorContainer?.classList.remove("d-none");
       if (errorMessage) {
-        errorMessage.innerText = error instanceof Error ? error.message : String(error);
+        errorMessage.innerText =
+          error instanceof Error ? error.message : String(error);
       }
     }
   });
