@@ -79,6 +79,7 @@ test("An empty spellbook has all counters at zero", () => {
     book: 0,
     movie: 0,
     videogame: 0,
+    series: 0,
   });
 });
 
@@ -87,10 +88,12 @@ test("It counts spells by their first appearance", () => {
   spellbook.addSpell(new Spell("Accio", "Descripción", "book"));
   spellbook.addSpell(new Spell("Alohomora", "Descripción", "movie"));
   spellbook.addSpell(new Spell("Flipendo", "Descripción", "videogame"));
+  spellbook.addSpell(new Spell("Nuevo hechizo", "Descripción", "series"));
 
   expect(spellbook.countByOrigin()).toEqual({
     book: "xx".length,
     movie: "x".length,
     videogame: "x".length,
+    series: "x".length,
   });
 });

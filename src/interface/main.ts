@@ -7,11 +7,13 @@ import Spellbook from "../domain/Spellbook";
 import bookIcon from "./img/book.svg";
 import movieIcon from "./img/movie.svg";
 import videogameIcon from "./img/videogame.svg";
+import seriesIcon from "./img/series.svg";
 
 const ORIGIN_ICONS: Record<FirstAppearance, string> = {
   book: bookIcon,
   movie: movieIcon,
   videogame: videogameIcon,
+  series: seriesIcon,
 };
 
 const btnAdd = document.getElementById("btn-add") as HTMLButtonElement | null;

@@ -1,18 +1,20 @@
 /**
  * Where a spell showed up for the first time.
  */
-export type FirstAppearance = "book" | "movie" | "videogame";
+export type FirstAppearance = "book" | "movie" | "videogame" | "series";
 
 export const FIRST_APPEARANCES: FirstAppearance[] = [
   "book",
   "movie",
   "videogame",
+  "series",
 ];
 
 export const ORIGIN_LABELS: Record<FirstAppearance, string> = {
   book: "Libro",
   movie: "Película",
   videogame: "Videojuego",
+  series: "Serie",
 };
 
 /**
